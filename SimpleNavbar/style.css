@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f3f1f1cb;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fafafa;
+  filter: drop-shadow(1px 0 5px #3333334b);
+  z-index: 2;
+}
+.navbar-logo {
+  background-color: #fafafa;
+}
+
+.navbar-logo p {
+  color: #000;
+  filter: drop-shadow(0 5px 3px #333333a1);
+  font-size: 1.5rem;
+  padding: 1.3rem;
+  text-transform: capitalize;
+  letter-spacing: 0.3rem;
+}
+
+.navbar-logo p span {
+  color: rgb(3, 189, 189);
+}
+.navbar-links ul {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.3rem;
+  height: 5rem;
+  align-items: center;
+}
+
+.navbar-links ul li {
+  list-style: none;
+}
+
+.navbar-links ul li:hover {
+  display: flex;
+  background-color: rgba(178, 255, 255, 0.171);
+  border-radius: 10px;
+  transition: 0.5s ease-out;
+  height: 60%;
+  align-items: center;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.navbar-links ul li a {
+  color: #000;
+  text-decoration: none;
+  letter-spacing: 0.2rem;
+}
+
+.contact-links ul {
+  display: flex;
+  gap: 1.2rem;
+  font-size: 1.2rem;
+  padding: 0 1rem;
+}
+.contact-links ul li {
+  list-style: none;
+}
+.contact-links ul li a {
+  color: rgb(3, 189, 189);
+}
+.button {
+  display: none;
+}
+.nav-toggle {
+  color: rgb(3, 189, 189);
+  background-color: transparent;
+  border: none;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 840px) {
+  .navbar-links {
+    display: none;
+  }
+  .navbar-show {
+    position: fixed;
+    display: flex;
+    top: 70px;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    background-color: #fafafaa4;
+    animation: slidein 1.5s 1 backwards;
+    z-index: 1;
+  }
+  .navbar-show ul {
+    display: flex;
+    flex-direction: column;
+    height: 13rem;
+    justify-content: center;
+    width: 100%;
+    gap: 0;
+  }
+  .navbar-show ul li {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #33333309;
+  }
+  .navbar-show ul li:hover {
+    height: 10rem;
+    border-radius: 0;
+    font-size: 1.3rem;
+  }
+  .contact-links {
+    display: none;
+  }
+  .button {
+    display: block;
+    cursor: pointer;
+  }
+  .nav-toggle {
+    transform: rotate(0);
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+  }
+  .nav-rotated {
+    transform: rotate(90deg);
+    transition: 0.5s ease-in-out;
+  }
+}
+@keyframes slidein {
+  from {
+    left: -100%;
+    opacity: 0;
+  }
+  to {
+    left: 0%;
+    opacity: 1;
+  }
+}
+@keyframes slideout {
+  from {
+    left: 0%;
+  }
+  to {
+    left: -100%;
+  }
+}
