@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Madimi One", Arial, Helvetica, sans-serif;
+}
+
+.todo-container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #8e7ab5, #b784b7);
+  padding: 10px;
+}
+
+.todo-app {
+  width: 100%;
+  max-width: 30rem;
+  background: #e493b3;
+  margin: auto;
+  margin-top: 12rem;
+  border-radius: 10px;
+}
+.todo-app p {
+  display: flex;
+  color: #8e7ab5;
+  padding: 1rem;
+  font-size: 1.4rem;
+  letter-spacing: 0.5rem;
+}
+.todo-input {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.todo-input input {
+  width: 60%;
+  background-color: transparent;
+  outline: none;
+  border: 1px solid #8e7ab5;
+  padding: 0.5rem;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  color: #8e7ab5;
+}
+.todo-input input::placeholder {
+  color: #fafafabe;
+}
+.todo-input button {
+  background-color: #b784b7;
+  padding: 0.5rem;
+  width: 3rem;
+  border: 1px solid #8e7ab5;
+  color: #e493b3;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.todo-input button:hover {
+  color: #8e7ab5;
+  background-color: #e493b3;
+  cursor: pointer;
+}
+
+.task-list {
+  padding: 1rem;
+  margin: 1rem;
+  color: #fafafabe;
+}
+
+.task-list ul li {
+  list-style: none;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  user-select: none;
+  position: relative;
+  font-size: 1.2rem;
+}
+
+.task-list ul li::before {
+  content: "";
+  position: absolute;
+  height: 23px;
+  width: 23px;
+  border-radius: 50%;
+  background-image: url(unchecked.png);
+  background-size: cover;
+  background-position: center;
+  left: -28px;
+}
+
+.task-list ul li.checked {
+  color: #8e7ab5;
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+.task-list ul li.checked::before {
+  background-image: url(checked.png);
+}
+.task-list ul li span {
+  position: absolute;
+  right: 0;
+  top: -7px;
+  width: 30px;
+  height: 30px;
+  font-size: 2rem;
+  color: #8e7ab5;
+}
+
+.task-list ul li span:hover {
+  color: red;
+}
